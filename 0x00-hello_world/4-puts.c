@@ -1,6 +1,9 @@
-include <studio.h>
+#include <stdio.h>
+/*
+ * main- a program that prints the put function
+ */
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
-Retuen (0);
+return (0);
 }
