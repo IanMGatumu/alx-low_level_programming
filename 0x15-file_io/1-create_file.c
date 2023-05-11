@@ -1,33 +1,30 @@
 #include "main.h"
 
-/**
- * Under the snow
- * A pointer to the name of the file to create
- * pointer to a string to write to the file
- */
 int create_file(const char *filename, char *text_content)
+/** create_file creates a new file */
+/** filename is a pointer to the name of the file being created */
+/** text_content is a pointer to write to the file that is created */
 {
-	int a = 0;
-        int b = 0;
-       	int lenth = 0;
+	int fd, w, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-	for (lenth = 0; text_content[lenth];)
-	lenth++;
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
-	a = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	b = write(a, text_content, len);
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(fd, text_content, len);
 
-	if (a == -1 || b == -1)
-	return (-1);
+	if (fd == -1 || w == -1)
+		return (-1);
+/** Return 1 if the file exists and -1 if the file does not exist, is null */
+/** or if you do not have the required permissions to write the file */
 
-	close(a);
+	close(fd);
 
 	return (1);
 }
-
