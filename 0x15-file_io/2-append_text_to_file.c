@@ -1,13 +1,12 @@
 #include "main.h"
 
-/**
- * Speak gently, she can hear
- */
+/** Speak gently, she can hear */
 int append_text_to_file(const char *filename, char *text_content)
+/** append_text_to_file appends text at the end of a file */
+/** filename is a pointer to the name of the file */
+/** text_content is the string to add to the end of the file */
 {
-	int a = 0;
-	int b = 0;
-	int lenth = 0;
+	int len, w, o = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -15,17 +14,18 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 	{
 		for (len = 0; text_content[len];)
-		lenth++;
+			len++;
 	}
 
-	a = open(filename, O_WRONLY | O_APPEND);
-	b = write(a, text_content, lenth);
+	o = open(filename, O_WRONLY | O_APPEND);
+	w = write(o, text_content, len);
 
-	if (a == -1 || b == -1)
+	if (w == -1 || o == -1)
 		return (-1);
+/** If the function fails or filename is NULL -1. If the file */
+/** does not exist the user lacks write permissions -1 else 1 */
 
-	close(a);
+	close(o);
 
 	return (1);
 }
-
