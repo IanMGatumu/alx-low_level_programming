@@ -23,8 +23,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	free(buf);
 	close(fd);
-
 	return (w);
-/** Return w is the number of bytes read and printed and return 0 when function does not write the expected amount of bytes or filename is NULL */
+/** Return w is the number of bytes read and printed and return */
+/** 0 when function does not write the expected amount of bytes */
+/** or filename is NULL */
 }
-
