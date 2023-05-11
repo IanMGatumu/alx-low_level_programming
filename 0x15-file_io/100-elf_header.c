@@ -167,7 +167,8 @@ void print_osabi(unsigned char *e_ident)
 
 void print_abi(unsigned char *e_ident)
 /** print_abi prints the ABI version of an ELF header */
-/** e_ident is a pointer to an array containing the ELF ABI version */
+/** e_ident is a pointer to an array containing */
+/** the ELF ABI version */
 {
 	printf(" ABI Version: %d\n",
 		e_ident[EI_ABIVERSION]);
@@ -176,7 +177,8 @@ void print_abi(unsigned char *e_ident)
 void print_type(unsigned int e_type, unsigned char *e_ident)
 /** print_type prints the type of an ELF header */
 /** e_type is the ELF type */
-/** e_ident is a pointer to an array containing the ELF class */
+/** e_ident is a pointer to an array containing */
+/** the ELF class */
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
@@ -208,7 +210,8 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 /** print_entry will print the entry point of an ELF header */
 /** e_entry is the address of the ELF entry point */
-/** e_ident is a pointer to an array containing the ELF class */
+/** e_ident is a pointer to an array containing the */
+/** ELF class */
 {
 	printf(" Entry point address: ");
 
@@ -228,7 +231,8 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 
 void close_elf(int elf)
 /** close_elf closes an ELF file */
-/** int elf is the file descriptor of the ELF file */
+/** int elf is the file descriptor of the */
+/** ELF file */
 {
 	if (close(elf) == -1)
 	{
