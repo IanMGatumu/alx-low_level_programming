@@ -1,26 +1,30 @@
 #include "main.h"
 #include <stdlib.h>
 
-/**
+/*
  * Tread lightly, she is near
- * Return: a is the actual number of bytes read and printed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
+/**read_textfile reads text file print to the STDOUT*/
 {
-	char *weid;
-	ssize_t a;
-	ssize_t b;
-	ssize_t c;
+	char *buf;
+	ssize_t fd;
+	ssize_t w;
+	ssize_t t;
 
-	b = open(filename, O_RDONLY);
-	if (b == -1)
+	fd = open(filename, O_RDONLY);
+/** filename: text file being read */
+	if (fd == -1)
 		return (0);
-	weid = malloc(sizeof(char) * letters);
-	c = read(fd, weid, letters);
-	a = write(STDOUT_FILENO, weid, c);
+	buf = malloc(sizeof(char) * letters);
+	t = read(fd, buf, letters);
+/** number of letters to be read */
+	w = write(STDOUT_FILENO, buf, t);
 
-	free(weid);
-	close(b);
-	return (a);
+	free(buf);
+	close(fd);
+
+	return (w);
+/** Return w is the number of bytes read and printed and return 0 when function does not write the expected amount of bytes or filename is NULL */
 }
 
