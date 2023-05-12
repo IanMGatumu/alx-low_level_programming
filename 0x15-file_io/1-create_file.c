@@ -1,5 +1,13 @@
 #include "main.h"
 
+/*
+ * create_file: creates a new file for processing
+ * @filename: is a pointer to the name of the file being created
+ * @text_content: is a pointer to write to the file that is created
+ *
+ * Return: 1 if the file exists and -1 if the file does not exist, is null
+ * or if you do not have the required permissions to write the file
+ */
 int create_file(const char *filename, char *text_content)
 /** create_file creates a new file */
 /** filename is a pointer to the name of the file being created */
