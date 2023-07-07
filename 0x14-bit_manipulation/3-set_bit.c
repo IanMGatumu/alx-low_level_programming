@@ -4,7 +4,7 @@
  * set_bit - function file sets a bit at a given index to 1
  * @n: is the long int value passed
  * @index: is the bit intager
- * Return 1 when successful and -1 for failure
+ * Return: 1 when successful and -1 for failure
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {

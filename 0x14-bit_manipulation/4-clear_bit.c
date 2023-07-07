@@ -3,8 +3,8 @@
 /**
  * clear_bit - function resets the value of a given bit to 0
  * @n: pointer for the changing number
- * index: value passed of the bit
- * Returns 1 for success and returns -1 for failure
+ * @index: value passed of the bit
+ * Returns: 1 for success and -1 for failure
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
