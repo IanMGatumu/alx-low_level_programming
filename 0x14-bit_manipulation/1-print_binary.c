@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_binary - Function prints from decimal to the binary equivalent
- * @n: passed long intager value
- * return void
+ * print_binary - Function prints from dec to the bin equivalent.
+ * @n: passed long intager value.
+ * return void.
 */
 void print_binary(unsigned long int n)
 {
